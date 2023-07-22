@@ -21,7 +21,7 @@ ERC-4337 Account Abstraction introduces a singleton contract called the entrypoi
 #### Single Owner account flow without signature aggregation
 ![normal- erc-4337-flow](https://github.com/Sednaoui/bls-aggregator-for-multisig-wallets/assets/7014833/59046107-531c-4a1a-a87d-6f4d48cca354)
 
-### Single Owner account flow with BLS signature aggregation
+#### Single Owner account flow with BLS signature aggregation
 ![signature-aggregation-for-single-owner-accounts](https://github.com/Sednaoui/bls-aggregator-for-multisig-wallets/assets/7014833/83bcec0c-19a1-4817-bcb6-30354359bb47)
 
 **Account**: 
@@ -54,4 +54,6 @@ Bundler:
 4. Output: Aggregated signature 
 5.handleAggregatedOps
 
+
 ### Aggregation Auth Module for Safe
+![safe-module-signature-aggregation-for-multi-owner-accounts](https://github.com/Sednaoui/bls-aggregator-for-multisig-wallets/assets/7014833/62be627d-7d58-41db-9bb0-3959901b0a08)
