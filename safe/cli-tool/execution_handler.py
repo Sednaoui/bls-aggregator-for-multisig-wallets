@@ -29,7 +29,7 @@ def execution_handler(wallet, transaction):
         agg_sig_affine = xyz_to_affine_G1(agg_sig)
         aggregated_sig = eth_abi.encode(["uint256[2]"], [[agg_sig_affine[0], agg_sig_affine[1]]]).hex()
         bitmask = create_binary_bitmap(signers, len(blsSigners))
-        module_exec_transaction(wallet, wallets[wallet]["address"], 1, b'', bitmask, aggregated_sig)
+        module_exec_transaction(wallet, wallets[wallet]["address"], 0, b'', bitmask, aggregated_sig)
 
 
 def module_exec_transaction(
@@ -131,7 +131,7 @@ def get_self_transfer_txhash(wallet):
     nonce = module.functions.getNonce(wallets[wallet]["address"]).call()
     transaction_hash = module.functions.getTransactionHash(
         wallets[wallet]["address"],
-        1,
+        0,
         b'',
         nonce
     ).call()
