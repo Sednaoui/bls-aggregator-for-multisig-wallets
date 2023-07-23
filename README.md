@@ -9,8 +9,21 @@ If you have used a multisig wallet, you might have probably noticed the higher g
 
 We designed two contract implementation: 
 
-1. ERC-4337 BLS multi-sig aggregator
-2. An Aggregation Auth Module for Safe
+1. An Aggregation Auth Module for Safe
+2. ERC-4337 BLS multi-sig aggregator
+
+### Aggregation Auth Module for Safe
+![safe-module-signature-aggregation-for-multi-owner-accounts](https://github.com/Sednaoui/bls-aggregator-for-multisig-wallets/assets/7014833/89019d58-1b46-49cc-aeb4-ec03b3198163)
+
+
+Wallet:
+1. Aggregate all owner signatures
+2. Generate bitmask
+3. Call Aggregation Auth Module
+
+Module: 
+
+- Instead of taking a signature field, it takes an aggregated signature. The module then calls the validateTxSignature on the aggregator contract with the following arguments: list of public address, aggregated signature, message hash
 
 ## ERC-4337 BLS multi-sig aggregator
 
@@ -19,10 +32,10 @@ We designed two contract implementation:
 ERC-4337 Account Abstraction introduces a singleton contract called the entrypoint to execute bundles of UserOperations. Bundlers/Clients whitelist the supported entrypoint.
 
 #### Single Owner account flow without signature aggregation
-![normal- erc-4337-flow](https://github.com/Sednaoui/bls-aggregator-for-multisig-wallets/assets/7014833/59046107-531c-4a1a-a87d-6f4d48cca354)
+![normal- erc-4337-flow](https://github.com/Sednaoui/bls-aggregator-for-multisig-wallets/assets/7014833/df3623c6-8b1d-40e9-86ab-cf80187a01d2)
 
-#### Single Owner account flow with BLS signature aggregation
-![signature-aggregation-for-single-owner-accounts](https://github.com/Sednaoui/bls-aggregator-for-multisig-wallets/assets/7014833/83bcec0c-19a1-4817-bcb6-30354359bb47)
+#### Single Owner account flow with signature aggregation
+![signature-aggregation-for-single-owner-accounts](https://github.com/Sednaoui/bls-aggregator-for-multisig-wallets/assets/7014833/61973dcc-e175-4573-ad7c-79eb1d855f94)
 
 **Account**: 
 1. The account setup its aggregator
@@ -37,8 +50,8 @@ ERC-4337 Account Abstraction introduces a singleton contract called the entrypoi
 5. handleAggregatedOps
 
 ## Signature Aggregation for multi-owner accounts
+![signature-aggregation-for-multi-owner-accounts](https://github.com/Sednaoui/bls-aggregator-for-multisig-wallets/assets/7014833/427f9559-229a-4e08-be81-a957ddcb663a)
 
-![signature-aggregation-for-multi-owner-accounts](https://github.com/Sednaoui/bls-aggregator-for-multisig-wallets/assets/7014833/04dc4963-72d6-4996-a4fa-f2912783a724)
 
 Multisig Account: 
 1. The account setup its aggregator
@@ -54,20 +67,6 @@ Bundler:
 4. Output: Aggregated signature 
 5.handleAggregatedOps
 
-
-### Aggregation Auth Module for Safe
-Aggregation Auth Module for Safe 
-
-Wallet:
-1. Aggregate all owner signatures
-2. Generate bitmask
-3. Call Aggregation Auth Module
-
-Module: 
-
-- Instead of taking a signature field, it takes an aggregated signature. The module then calls the validateTxSignature on the aggregator contract with the following arguments: list of public address, aggregated signature, message hash
-
-![safe-module-signature-aggregation-for-multi-owner-accounts](https://github.com/Sednaoui/bls-aggregator-for-multisig-wallets/assets/7014833/62be627d-7d58-41db-9bb0-3959901b0a08)
 
 ##### Aggregated signature Transaction onchain
 https://goerli-optimism.etherscan.io/tx/0x1b347061606c1aa6d2d2f55cbd5c88914c109e4c8405c4d3579a7855af51fbd6
