@@ -25,21 +25,21 @@ contract SafeBLSSignatureAggregator is IAggregator {
         uint pubKeysLen = publicKeys.length;
         uint256[2][] memory messages = new uint256[2][](pubKeysLen);
         for (uint256 i = 0; i < pubKeysLen; i++) {
-            messages[i] = _dataHashToMessage(dataHash, _getPublicKeyHash(publicKeys[i]));
+            messages[i] = dataHashToMessage(dataHash, getPublicKeyHash(publicKeys[i]));
         }
         require(BLSOpen.verifyMultiple(blsSignature, publicKeys, messages), "BLS: validateSignatures failed");
     }
 
-    function _dataHashToMessage(bytes32 dataHash, bytes32 publicKeyHash) internal view returns (uint256[2] memory) {
-        bytes32 messageHash = _getDataHash(dataHash, publicKeyHash);
+    function dataHashToMessage(bytes32 dataHash, bytes32 publicKeyHash) public view returns (uint256[2] memory) {
+        bytes32 messageHash = getDataHash(dataHash, publicKeyHash);
         return BLSOpen.hashToPoint(BLS_DOMAIN, abi.encodePacked(messageHash));
     }
 
-    function _getDataHash(bytes32 message, bytes32 publicKeyHash) internal view returns (bytes32) {
+    function getDataHash(bytes32 message, bytes32 publicKeyHash) public view returns (bytes32) {
         return keccak256(abi.encode(message, publicKeyHash, address(this), block.chainid));
     }
 
-    function _getPublicKeyHash(uint256[4] memory publicKey) internal pure returns(bytes32) {
+    function getPublicKeyHash(uint256[4] memory publicKey) public pure returns(bytes32) {
         return keccak256(abi.encode(publicKey));
     }
 
