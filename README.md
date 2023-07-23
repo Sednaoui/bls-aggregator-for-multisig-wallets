@@ -61,13 +61,32 @@ Bundler:
 #### Contract Deployments
 
 ##### Polyon
+https://polygonscan.com/address/0xAa0599ccEF72f0624FaF004F398ceD5813128056
+https://polygonscan.com/address/0xe92dE7160b9Ab1c0239FA9c6A880624ABfCF0279
+https://polygonscan.com/address/0x55758A3316D9fbe59153013FB8109Bc32cFb1E63
 
 ##### Celo
+https://celoscan.io/address/0xAa0599ccEF72f0624FaF004F398ceD5813128056
+https://celoscan.io/address/0xe92dE7160b9Ab1c0239FA9c6A880624ABfCF0279
+https://celoscan.io/address/0x55758A3316D9fbe59153013FB8109Bc32cFb1E63
 
 ##### Mantel
+https://explorer.testnet.mantle.xyz/address/0x464589093B7D17b197FCB5aa88fd4727C697Eb90
+https://explorer.testnet.mantle.xyz/address/0x96320a2dc2Dd1D00F7f4A9D6cFEA65750944605A
+https://explorer.testnet.mantle.xyz/address/0xba7A7Ec4c89C4a205AdCC35c48292dd1316Cfe2d
 
 ##### Gnosis
+https://gnosisscan.io/address/0x63d2b9d8dd9a1643ae7ce2adfcd86e2bd0be250e
+https://gnosisscan.io/address/0x75dF851E42b146659419a4A1fE2D4418B713C0b4
+https://gnosisscan.io/address/0x5f0898D011AfEfeD2C10fDFCe5Cea07B97F85C9c
 
 ##### Linea
+https://goerli.lineascan.build/address/0x63d2b9d8dd9a1643ae7ce2adfcd86e2bd0be250e
+https://goerli.lineascan.build/address/0x75dF851E42b146659419a4A1fE2D4418B713C0b4
+https://goerli.lineascan.build/address/0x5f0898D011AfEfeD2C10fDFCe5Cea07B97F85C9c
 
 ##### Optimisic Goerli
+https://goerli-optimism.etherscan.io/address/0xAa0599ccEF72f0624FaF004F398ceD5813128056
+https://goerli-optimism.etherscan.io/address/0xe92dE7160b9Ab1c0239FA9c6A880624ABfCF0279
+https://goerli-optimism.etherscan.io/address/0x55758A3316D9fbe59153013FB8109Bc32cFb1E63
+
