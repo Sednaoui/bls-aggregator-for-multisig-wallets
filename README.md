@@ -56,7 +56,21 @@ Bundler:
 
 
 ### Aggregation Auth Module for Safe
+Aggregation Auth Module for Safe 
+
+Wallet:
+1. Aggregate all owner signatures
+2. Generate bitmask
+3. Call Aggregation Auth Module
+
+Module: 
+
+- Instead of taking a signature field, it takes an aggregated signature. The module then calls the validateTxSignature on the aggregator contract with the following arguments: list of public address, aggregated signature, message hash
+
 ![safe-module-signature-aggregation-for-multi-owner-accounts](https://github.com/Sednaoui/bls-aggregator-for-multisig-wallets/assets/7014833/62be627d-7d58-41db-9bb0-3959901b0a08)
+
+##### Aggregated signature Transaction onchain
+https://goerli-optimism.etherscan.io/tx/0x1b347061606c1aa6d2d2f55cbd5c88914c109e4c8405c4d3579a7855af51fbd6
 
 #### Contract Deployments
 
@@ -89,4 +103,3 @@ https://goerli.lineascan.build/address/0x5f0898D011AfEfeD2C10fDFCe5Cea07B97F85C9
 https://goerli-optimism.etherscan.io/address/0xAa0599ccEF72f0624FaF004F398ceD5813128056
 https://goerli-optimism.etherscan.io/address/0xe92dE7160b9Ab1c0239FA9c6A880624ABfCF0279
 https://goerli-optimism.etherscan.io/address/0x55758A3316D9fbe59153013FB8109Bc32cFb1E63
-
